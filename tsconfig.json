@@ -1,0 +1,11 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true       // <-- ignore types inside node_modules
+  },
+  "include": [
+    "src",                      // your source files
+    "declarations.d.ts"         // your manual stubs
+  ]
+}
