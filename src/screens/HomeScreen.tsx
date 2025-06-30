@@ -42,7 +42,7 @@ export default function HomeScreen() {
       key: 'community',
       label: 'Community',
       icon: 'people-outline',
-      onPress: () => nav.navigate('Community' as never),
+      onPress: () => nav.navigate('Community' as never)
     },
     {
       key: 'chatroom',
