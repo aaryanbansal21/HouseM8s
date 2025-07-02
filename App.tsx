@@ -17,14 +17,6 @@ import CommunityScreen from './src/screens/CommunityScreen';
 const Stack = createStackNavigator();
 
 function MainMenu({ navigation }) {
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { registerRootComponent } from 'expo';
-import { Provider as PaperProvider } from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen';
-
-function App() {
   return (
     <View style={styles.container}>
       <Button title="Login" onPress={() => navigation.navigate('Login')} />
