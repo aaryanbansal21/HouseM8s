@@ -23,8 +23,11 @@ export default function LoginScreen() {
   };
 
   const handleAdminLogin = () => {
-    // TODO: Add actual admin auth logic here
-    navigation.navigate('AdminDashboard' as never); // Change to your actual admin route
+    navigation.navigate('AdminDashboard' as never); // Update to actual admin screen
+  };
+
+  const handleSignup = () => {
+    navigation.navigate('Signup' as never); // Update to actual signup screen
   };
 
   return (
@@ -34,7 +37,7 @@ export default function LoginScreen() {
         style={styles.inner}
       >
         <Text variant="headlineMedium" style={styles.title}>
-          Welcome Back
+          Welcome!
         </Text>
 
         <TextInput
@@ -69,6 +72,13 @@ export default function LoginScreen() {
         >
           Sign in as Admin
         </Button>
+
+        <View style={styles.signupContainer}>
+          <Text variant="bodySmall">Don't have an account?</Text>
+          <Button mode="text" onPress={handleSignup} compact>
+            Sign Up
+          </Button>
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -92,5 +102,11 @@ const styles = StyleSheet.create({
   adminButton: {
     marginTop: 4,
     alignSelf: 'center',
+  },
+  signupContainer: {
+    marginTop: 16,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

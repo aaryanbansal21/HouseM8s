@@ -6,9 +6,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // Import your screens here
 // import AccountScreen from './src/screens/AccountScreen';
-// import ChatScreen from './src/screens/ChatScreen';
+import ChatScreen from './src/screens/ChatScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import ReportIncidentScreen from './src/screens/ReportIncidentScreen';
+import ReportHistoryScreen from './src/screens/ReportHistoryScreen';
+import CommunityScreen from './src/screens/CommunityScreen';
 // import TimelineScreen from './src/screens/TimelineScreen';
 
 const Stack = createStackNavigator();
@@ -32,11 +35,11 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         {/* Uncomment these lines when the screens are implemented */}
-        {/* <Stack.Screen name="ReportIncident" component={ReportIncidentScreen} /> */}
-        {/* <Stack.Screen name="ReportHistory" component={ReportHistoryScreen} /> */}
-        {/* <Stack.Screen name="Community" component={CommunityScreen} /> */}        
+        <Stack.Screen name="ReportIncident" component={ReportIncidentScreen} />
+        <Stack.Screen name="ReportHistory" component={ReportHistoryScreen} />
+        <Stack.Screen name="Community" component={CommunityScreen} />        
         {/* <Stack.Screen name="AccountScreen" component={AccountScreen} /> */}
-        {/* <Stack.Screen name="ChatScreen" component={ChatScreen} /> */}
+        <Stack.Screen name="Chat" component={ChatScreen} />
         {/* <Stack.Screen name="TimelineScreen" component={TimelineScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
