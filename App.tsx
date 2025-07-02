@@ -1,12 +1,45 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+// Import your screens here
+// import AccountScreen from './src/screens/AccountScreen';
+// import ChatScreen from './src/screens/ChatScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import LoginScreen from './src/screens/LoginScreen';
+// import TimelineScreen from './src/screens/TimelineScreen';
+
+const Stack = createStackNavigator();
+
+function MainMenu({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Button title="Login" onPress={() => navigation.navigate('Login')} />
+      {/* <Button title="Account" onPress={() => navigation.navigate('AccountScreen')} /> */}
+      {/* <Button title="Chat" onPress={() => navigation.navigate('ChatScreen')} /> */}
+      {/* <Button title="Timeline" onPress={() => navigation.navigate('TimelineScreen')} /> */}
+    </View>
+  );
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Menu">
+        <Stack.Screen name="Menu" component={MainMenu} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        {/* Uncomment these lines when the screens are implemented */}
+        {/* <Stack.Screen name="ReportIncident" component={ReportIncidentScreen} /> */}
+        {/* <Stack.Screen name="ReportHistory" component={ReportHistoryScreen} /> */}
+        {/* <Stack.Screen name="Community" component={CommunityScreen} /> */}        
+        {/* <Stack.Screen name="AccountScreen" component={AccountScreen} /> */}
+        {/* <Stack.Screen name="ChatScreen" component={ChatScreen} /> */}
+        {/* <Stack.Screen name="TimelineScreen" component={TimelineScreen} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
